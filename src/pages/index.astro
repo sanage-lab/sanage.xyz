@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
 const title = '三阿哥又长高了吗 · 个人品牌主港';
-const description = '29,000+ 人参与的认知与效率工具集——AI 实验室、CalmFlow 心流、Quiz 测评、Bu 占卜与博客。';
+const description = '29,000+ 人参与的认知与效率工具集——企业 AI 手册、AI 实验室、CalmFlow 心流、Quiz 测评、Bu 占卜与博客。';
 
 type Product = {
   tag?: string;
@@ -20,6 +20,17 @@ type Product = {
 
 const PRODUCTS: Product[] = [
   {
+    tag: "主推",
+    emoji: "📖",
+    title: "Handbook",
+    sub: "企业 AI 稳定产出 · 方法手册",
+    desc: "从最小闭环到可运行方法，让 AI 参与的工作可复核、可维护、可接管——面向业务、交付与治理团队。",
+    href: "https://handbook.sanage.xyz",
+    domain: "handbook.sanage.xyz",
+    cta: "阅读手册",
+    featured: true,
+  },
+  {
     tag: "新",
     emoji: "🧪",
     title: "Sanage AI Lab",
@@ -28,7 +39,6 @@ const PRODUCTS: Product[] = [
     href: "https://lab.sanage.xyz",
     domain: "lab.sanage.xyz",
     cta: "去实验室",
-    featured: true,
   },
   {
     emoji: "🌊",
@@ -78,7 +88,7 @@ const LOG = [
 
 const STATS = [
   { k: "29,000+", v: "测试参与者" },
-  { k: "5", v: "在跑产品线" },
+  { k: "6", v: "在跑产品线" },
   { k: "120+", v: "公开构建日志" },
   { k: "∞", v: "正在生长" },
 ];
@@ -110,7 +120,8 @@ const blogTeasers = sortedPosts.slice(0, 3);
           一份持续生长的认知与效率工具集——
           <span class="text-[var(--ink)] font-medium">测评你的人格</span>，
           <span class="text-[var(--ink)] font-medium">训练你的大脑</span>，
-          <span class="text-[var(--ink)] font-medium">管理你的状态</span>。
+          <span class="text-[var(--ink)] font-medium">管理你的状态</span>，
+          <span class="text-[var(--ink)] font-medium">沉淀你的方法</span>。
         </p>
         <div class="mt-10 flex flex-wrap items-center gap-3">
           <a
@@ -164,9 +175,9 @@ const blogTeasers = sortedPosts.slice(0, 3);
   {/* Marquee Section */}
   <div class="rule-top border-b border-[var(--rule)] bg-[var(--paper-deep)] overflow-hidden">
     <div class="flex gap-12 py-4 whitespace-nowrap animate-[marquee_38s_linear_infinite] font-display text-2xl text-[var(--ink)]">
-      {["SANAGE LAB", "BUILD IN PUBLIC", "PRODUCTIZE YOURSELF", "认知 · 效率 · 心流", "29,000+ TESTERS"].concat(
-        ["SANAGE LAB", "BUILD IN PUBLIC", "PRODUCTIZE YOURSELF", "认知 · 效率 · 心流", "29,000+ TESTERS"],
-        ["SANAGE LAB", "BUILD IN PUBLIC", "PRODUCTIZE YOURSELF", "认知 · 效率 · 心流", "29,000+ TESTERS"]
+      {["ENTERPRISE AI HANDBOOK", "SANAGE LAB", "BUILD IN PUBLIC", "PRODUCTIZE YOURSELF", "认知 · 效率 · 心流", "29,000+ TESTERS"].concat(
+        ["ENTERPRISE AI HANDBOOK", "SANAGE LAB", "BUILD IN PUBLIC", "PRODUCTIZE YOURSELF", "认知 · 效率 · 心流", "29,000+ TESTERS"],
+        ["ENTERPRISE AI HANDBOOK", "SANAGE LAB", "BUILD IN PUBLIC", "PRODUCTIZE YOURSELF", "认知 · 效率 · 心流", "29,000+ TESTERS"]
       ).map((t) => (
         <span class="flex items-center gap-12">
           {t}
@@ -194,9 +205,7 @@ const blogTeasers = sortedPosts.slice(0, 3);
       {PRODUCTS.map((p, idx) => {
         const span = p.featured
           ? "md:col-span-4 md:row-span-2 min-h-[420px]"
-          : idx === 3 || idx === 4
-            ? "md:col-span-3 min-h-[220px]"
-            : "md:col-span-2 min-h-[220px]";
+          : "md:col-span-2 min-h-[220px]";
         
         return (
           <a

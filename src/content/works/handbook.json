@@ -1,0 +1,14 @@
+{
+	"title": "Handbook · 企业 AI 稳定产出手册",
+	"description": "从最小闭环到可运行方法，回答如何让 AI 参与的工作产出可复核、可维护、可接管的结果。覆盖自诊断、最小闭环、上下文与知识、Agent 治理、评测与回退，供业务、交付与治理团队直接取用。",
+	"slug": "handbook",
+	"emoji": "📖",
+	"theme": "indigo",
+	"tags": ["企业 AI", "Agent 治理", "方法手册"],
+	"ogImage": "/images/og/handbook.png",
+	"status": "online",
+	"statusLabel": "已上线",
+	"links": [
+		{ "label": "阅读手册", "url": "https://handbook.sanage.xyz/" }
+	]
+}

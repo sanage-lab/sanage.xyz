@@ -2,13 +2,13 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
-const title = '作品集 · 互动人格测试与 AI 执行效率工具矩阵 | Sanage';
-const description = 'Sanage 旗下互动作品与子站全览。包括：Quiz 测评室（谍战人格测试、武林外传匹配）、CalmFlow 桌面 AI 任务拆解系统与 Bu 占卜室（周易与多元占卜平台）。';
+const title = '作品集 · 企业 AI 手册与互动工具矩阵 | Sanage';
+const description = 'Sanage 旗下作品与子站全览。包括：Handbook 企业 AI 稳定产出手册（可复核 · 可维护 · 可接管）、Quiz 测评室（谍战人格测试、武林外传匹配）、CalmFlow 桌面 AI 任务拆解系统与 Bu 占卜室（周易与多元占卜平台）。';
 
 const works = await getCollection('works');
 
 // Sort works based on specific business weights
-const order = ['lab', 'calmflow', 'quiz', 'bu'];
+const order = ['handbook', 'lab', 'calmflow', 'quiz', 'bu'];
 const sortedWorks = [...works].sort((a, b) => {
   return order.indexOf(a.data.slug) - order.indexOf(b.data.slug);
 });
@@ -17,7 +17,10 @@ const sortedWorks = [...works].sort((a, b) => {
 const items = sortedWorks.map((w, idx) => {
   let role = 'Web · 数字化产品';
   let year = '2025 –';
-  if (w.data.slug === 'lab') {
+  if (w.data.slug === 'handbook') {
+    role = '手册 · 企业 AI 方法';
+    year = '2026 –';
+  } else if (w.data.slug === 'lab') {
     role = 'AI 阵地 · 咨询展示';
     year = '2026';
   } else if (w.data.slug === 'calmflow') {
